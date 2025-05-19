@@ -3,6 +3,11 @@ let addTask = document.getElementById("addTask");
 let tasksList = document.getElementById("tasksList");
 
 addTask.addEventListener("click", addingTask);
+inputText.addEventListener("keydown" , (e) =>{
+    if(e.key=== "Enter"){
+        addingTask();
+    }
+})
 
 
 let tasks = [];
