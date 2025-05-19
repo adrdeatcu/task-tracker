@@ -25,10 +25,12 @@ function loadTasks()
 
 function renderTasks()
 {
+
     tasksList.innerHTML="";
 
-    tasks.forEach(task=>{
+    tasks.forEach((task, index)=>{
         let newLi = document.createElement("li");
+        let deleteButton = document.createElement("button");
         newLi.textContent = `${task.title}`;
         newLi.addEventListener("click", (toggleTask) => {
             task.done = !task.done;
@@ -39,7 +41,15 @@ function renderTasks()
         if(task.done){
             newLi.style.textDecoration= "line-through";
         }
-        
+        deleteButton.textContent="X";
+        deleteButton.classList.add("deleteButton");
+        deleteButton.addEventListener("click", (del) =>{
+            del.stopPropagation();
+            tasks.splice(index,1);
+            saveTasks();
+            renderTasks();
+        })
+        newLi.appendChild(deleteButton);
         tasksList.appendChild(newLi);
     })
 }
@@ -48,8 +58,10 @@ function renderTasks()
 
 function addingTask()
 {
+    
     let inputValue = document.getElementById("inputText").value;
     tasks.push({title: inputValue, done: false});
+    
     saveTasks();
     inputText.value="";
     renderTasks();
