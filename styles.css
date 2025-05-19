@@ -1,9 +1,69 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #4E6688;
+}
+
 .deleteButton
 {
     background-color: red;
-    padding: 8px;
+    padding: 10px;
     color: white;
     border: 2px solid black;
-    margin-left: 5px;
+    border-radius: 8px;
+    margin-left: 10px;
     cursor: pointer;
+    font-size: 20px;
+    
+}
+
+#mainTitle
+{
+    font-size: 70px;
+    text-decoration: underline;
+    color: #E3EEB2;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-style: italic;
+    margin-bottom: -2px;
+    
+}
+
+#inputText
+{
+    height: 50px;
+}
+
+#addTask
+{
+    background-color: #E3EEB2;
+    color: #4E6688;
+    font-size: large;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+#container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tasksList
+{
+    margin-top: 50px;
+    font-size: 30px;
+    color: #E3EEB2;
+}
+
+#secondTitle
+{
+    color: #E3EEB2;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-style: italic;
+    margin-bottom: 30px;
 }
